@@ -9,6 +9,7 @@ This website is use to showcase my skill on web design and development. Built wi
 ## Todo
 
 - [ ] Use components based design
+- [ ] Store scripts in src directory & use it locally on a component
 - [ ] Use different pages
 - [ ] Use view transitions
 
