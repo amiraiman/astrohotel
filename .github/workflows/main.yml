@@ -29,12 +29,6 @@ jobs:
       - name: Build files
         run: npm run build
 
-  deploy:
-    runs-on: ubuntu-latest
-    
-    needs: build
-    
-    steps:
       - name: Copy dist to server with scp
         uses: appleboy/scp-action@v0.1.7
         with:
