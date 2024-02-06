@@ -21,19 +21,19 @@ jobs:
       - name: Install NodeJS
         uses: actions/setup-node@v4.0.1
         with:
-          node-version: '20'
+          node-version: "20"
 
       - name: Install dependencies
         run: npm install
 
       - name: Build files
         run: npm run build
-            
+
       - name: Remove old dist folder
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
+          host: ${{ secrets.DROPLET_HOST }}
+          username: ${{ secrets.DROPLET_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: rm -rf /var/www/aahotel.amiraiman.dev/dist
 
