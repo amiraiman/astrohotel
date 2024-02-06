@@ -28,6 +28,14 @@ jobs:
 
       - name: Build files
         run: npm run build
+            
+      - name: Remove old dist folder
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: rm -rf /var/www/aahotel.amiraiman.dev/dist
 
       - name: Copy dist to server with scp
         uses: appleboy/scp-action@v0.1.7
